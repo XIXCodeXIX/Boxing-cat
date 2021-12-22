@@ -1,0 +1,53 @@
+from tkinter import *
+root = Tk()
+root.configure(cursor='target')
+root.resizable(False, False)
+o = PhotoImage(file='....')
+o0 = PhotoImage(file='....')
+o1 = PhotoImage(file='....')
+o2 = PhotoImage(file='....')
+o3 = PhotoImage(file='....')
+o4 = PhotoImage(file='....')
+o5 = PhotoImage(file='....')
+
+a0 = Label(root, image=o)
+a0.grid(row=0, column=0)
+
+
+def a1(event):
+    a0.configure(image=o0)
+
+    def a2(event):
+        a0.configure(image=o1)
+
+        def a3(event):
+            a0.configure(image=o2)
+
+            def a4(event):
+                a0.configure(image=o3)
+
+                def a5(event):
+                    a0.configure(image=o4)
+
+                    def a6(event):
+                        a0.configure(image=o5)
+
+                        def a7(event):
+                            a0.configure(image=o)
+                            a0.bind('<Button-1>', a1)
+
+                        a0.bind('<Button-1>', a7)
+
+                    a0.bind('<Button-1>', a6)
+
+                a0.bind('<Button-1>', a5)
+
+            a0.bind('<Button-1>', a4)
+
+        a0.bind('<Button-1>', a3)
+
+    a0.bind('<Button-1>', a2)
+
+
+a0.bind('<Button-1>', a1)
+root.mainloop()
